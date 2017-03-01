@@ -3,6 +3,7 @@
 ## Description
 
 Fast Front is an open source reverse proxy cache server with automated SSL using [Let's Encrypt](https://letsencrypt.org/). It caches static and dynamic content separated and also you can automate the purge.
+
 The project is based on [OpenResty](https://github.com/openresty/openresty) and uses [Lua](https://github.com/lua/lua) to automate SSL and purge the cache.
 
 ## Features
@@ -15,11 +16,13 @@ The project is based on [OpenResty](https://github.com/openresty/openresty) and 
 ## Usage
 
 Place your configs into `/usr/local/openresty/nginx/conf/conf.d`, you can mount a volume to this folder. The OpenResty is configured to read all `*.conf` inside `/usr/local/openresty/nginx/conf/conf.d`.
+
 **Important!** Mount volume to folders `/var/run/proxy_cache` and `/var/run/proxy_cache_statics`, it'll keep the cache files out of the container.
 
 ### Configuration
 
 The project is configured to read all `*.conf` inside `/usr/local/openresty/nginx/conf/conf.d`. You can mount a single file or folder to `/usr/local/openresty/nginx/conf/conf.d`.
+
 Use the `conf.d/example.conf` on GitHub (https://github.com/murara/fastfront) to create your own files.
 
 ### Running Single Config
@@ -54,12 +57,18 @@ docker run --name fastfront \
 ## Purge
 
 You can purge cache content doing a HTTP request in the top of `/purge` path. It works for dynamic and static content.
+
 **Example:**
+
 URL Cached: http://mydomain.com/about
+
 URL To Purge: http://mydomain.com/purge/about
+
 Using cURL: `curl http://mydomain.com/purge/about`
 
+
 **_Wordpress Tip_**
+
 Use this plugin to automate the purge: (Nginx Proxy Cache Purge)[https://wordpress.org/plugins/nginx-proxy-cache-purge/]
 
 ## Roadmap
