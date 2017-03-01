@@ -31,7 +31,7 @@ Create a config file using the example placed on `conf.d/example.conf` on GitHub
 
 ```
 docker run --name fastfront \
-    -p 80:80 \ 
+    -p 80:80 \
     -p 443:443 \
     -v /path/to/proxy_dynamic_cache_folder:/var/run/proxy_cache \
     -v /path/to/proxy_static_cache_folder:/var/run/proxy_cache_statics \
@@ -46,7 +46,7 @@ Create a folder to places your configs file based on  `conf.d/example.conf` on G
 
 ```
 docker run --name fastfront \
-    -p 80:80 \ 
+    -p 80:80 \
     -p 443:443 \
     -v /path/to/proxy_dynamic_cache_folder:/var/run/proxy_cache \
     -v /path/to/proxy_static_cache_folder:/var/run/proxy_cache_statics \
