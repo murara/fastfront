@@ -69,7 +69,7 @@ Using cURL: `curl http://mydomain.com/purge/about`
 
 **_Wordpress Tip_**
 
-Use this plugin to automate the purge: (Nginx Proxy Cache Purge)[https://wordpress.org/plugins/nginx-proxy-cache-purge/]
+Use this plugin to automate the purge: [Nginx Proxy Cache Purge](https://wordpress.org/plugins/nginx-proxy-cache-purge/)
 
 ## Roadmap
 
