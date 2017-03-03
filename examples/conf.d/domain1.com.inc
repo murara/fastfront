@@ -20,16 +20,18 @@ location / {
     proxy_http_version 1.1;
     proxy_ignore_client_abort on;
 
+    proxy_no_cache $do_not_cache;
     proxy_cache_bypass $bypass $do_not_cache;
-    proxy_cache_valid 200 1h;
+    proxy_cache_valid 200 24h;
     proxy_cache_valid 404 1m;
     proxy_cache_lock on;
-    proxy_pass http://backend; # REPLACE WITH YOUR BACKEND URL
+    proxy_pass http://???.???.???.???; # REPLACE WITH YOUR BACKEND URL
 }
 
-location ~ "(/feed|/api)" {
+location ~ "(/wp-(?!content)|/index.php)" {
     proxy_no_cache 1;
-    proxy_pass http://backend; # REPLACE WITH YOUR BACKEND URL
+    proxy_cache_bypass 1;
+    proxy_pass http://???.???.???.???; # REPLACE WITH YOUR BACKEND URL
 }
 
 location ~ /purge(/.*) {
@@ -54,7 +56,7 @@ location ~* \.(?:css|js|jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|ht
     proxy_cache_valid 200 7d;
     proxy_cache_valid 404 1m;
     proxy_cache_lock on;
-    proxy_pass http://backend; # REPLACE WITH YOUR BACKEND URL
+    proxy_pass http://???.???.???.???; # REPLACE WITH YOUR BACKEND URL
 }
 
 # Endpoint used for performing domain verification with Let's Encrypt.
