@@ -11,4 +11,4 @@ RUN apk add openssl \
  && mkdir -p /usr/local/openresty/lualib/resty/
 
 COPY purge.lua /usr/local/openresty/lualib/resty/purge.lua
-COPY t/nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
+COPY nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
